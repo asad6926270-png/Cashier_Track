@@ -7,7 +7,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
       - uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
@@ -18,7 +18,7 @@ jobs:
           npm install @capacitor/core @capacitor/cli @capacitor/android
           npx cap init "Cashier Tracker" com.shop.cashier --web-dir=. --npm-client npm
           npx cap add android
-          npx cap copy
+          npx cap copy android
           cd android
           chmod +x gradlew
           ./gradlew assembleDebug
